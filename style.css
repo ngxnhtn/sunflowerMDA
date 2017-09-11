@@ -6,7 +6,8 @@ html {
 }
 
 body {
-    margin: 0
+    margin: 0;
+	
 }
 
 article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary {
@@ -531,13 +532,19 @@ a:hover {
 .page-header {
     color: #fff;
     text-align: center;
-    background-color: #159957;
-    background-image: linear-gradient(120deg, #155799, #159957)
+	background-color: #159957;
+	overflow-y: hidden ! important;
+    overflow-x: hidden ! important;
+    background: url(banner-2.jpg);
+	background-size:     100%  100%;                     
+    background-repeat:   no-repeat;
+    background-position: center center;
+	padding:10rem 13.6rem
 }
-
+/*
 @media screen and (min-width: 64em) {
     .page-header {
-        padding:5rem 6rem
+        padding:7.2rem 13.6rem
     }
 }
 
@@ -552,7 +559,7 @@ a:hover {
         padding:2rem 1rem
     }
 }
-
+*/
 .project-name {
     margin-top: 0;
     margin-bottom: 0.1rem;
@@ -602,7 +609,8 @@ a:hover {
 }
 
 .main-content {
-    word-wrap: break-word
+    word-wrap: break-word;
+	
 }
 
 .main-content :first-child {
