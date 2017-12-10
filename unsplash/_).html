@@ -1,0 +1,80 @@
+<html itemscope itemtype="http://schema.org/Organization">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+	<title>:)</title>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="styles/css/bootstrap.min.css">
+	<link rel="stylesheet" href="styles/css/font-awesome.min.css">
+	<link rel="stylesheet" href="styles/css/semantic.min.css">
+	<link rel="stylesheet" href="styles/css/vsb.css">
+	<script type="text/javascript" src="styles/js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="styles/js/tether.min.js"></script>
+	<script type="text/javascript" src="styles/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="styles/js/semantic.min.js"></script>
+	<script type="text/javascript" src="styles/js/cbds.js"></script>
+	
+</head>
+<body style="background-image: url(http://sv1.upsieutoc.com/2017/12/09/bg866a4ff257c9fa7b.png)">
+<script>
+	
+	function httpGet(theUrl){
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open("GET", theUrl, false); // true for asynchronous 
+    xmlHttp.send(null);
+	return JSON.parse(xmlHttp.responseText);
+	}
+	
+	function randomImg() {
+	var url = httpGet("https://api.unsplash.com/photos/random/?client_id=74ebd5124b9c996a4ee313fdf2a5921a6c7f0c9b6821eb8ae993edf8790f1b95");
+	//document.getElementsByTagName('body')[0].style.background = 'URL(' + url.urls.full + ') no-repeat cover';
+	document.getElementById('time').innerHTML = url.created_at;
+	document.getElementById('tus').innerHTML = url.description;
+	document.getElementById('mi').src = url.urls.regular;
+	document.getElementById('author').href = url.user.links.html;
+	document.getElementById('author').innerHTML = url.user.name;
+	document.getElementById('link_anh').href = url.urls.full;
+	}
+	
+	</script>
+<div class="main-container">
+	<div class="container">
+			<div class="row">
+				<div class="col-md-2 hidden-sm" id="leftCol">
+					<div class="ui comments">
+							<div class="comment">
+							</div>
+					</div>
+				</div>
+				<div class="col-md-8 col-sm-12">
+					<div class="thread-list">
+							<!-- itmes -->
+	
+	<div class="pos-nex"><button onclick="randomImg()">Next</button></div>
+	<div class="items ui segment cbds-box">
+		<div class="info ui labeled " tabindex="0">
+		<a title="Tác giả" target="_blank" href="https://www.unsplash.com" id="author">Unsplash Random Image Get</a>
+			<div class="ui ite-timl" id="time">NhuTien</div>
+			</div>
+		<div class="ite-inn cbds-box-bod">
+			<div class="ite-des">
+					<p id="tus"></p>
+			</div>
+			<a id="link_anh" target="_blank" href=""><img class="ui fluid image" id="mi" src="http://sv1.upsieutoc.com/2017/12/10/htu.png"></a>
+		</div>
+		<div class="ui divider"></div>
+	</div>
+	
+			     </div>
+				</div>
+				<div class="col-md-2 hidden-sm" id="rightCol">
+					<div class="ui list-ite">
+							<div class=""></div>
+					</div>
+				</div>
+      </div>
+  </div>
+</div>
+</body>
+</html>
+
